@@ -1,0 +1,9 @@
+@forward "bigin-ui/theme-chalk/src/common/var" with (
+  $colors: (
+    "primary": (
+      "base": #0086ff,
+    ),
+  )
+);
+
+@use "bigin-ui/theme-chalk/src/index.scss" as *;
