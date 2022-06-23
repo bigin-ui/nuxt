@@ -6,6 +6,15 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+  app: {
+    head: {
+      meta: [
+        // <meta name="viewport" content="width=device-width, initial-scale=1">
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+      ],
+      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+    },
+  },
   modules: ["@unocss/nuxt"],
   css: ["~/assets/scss/app.scss"],
   components: [
