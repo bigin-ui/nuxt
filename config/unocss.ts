@@ -20,8 +20,7 @@ export const unocss: UnocssNuxtOptions = {
         h5{font-size:14px;line-height:18px}
         h6{font-size:12px;line-height:16px}
         p{margin:0;font-size:14px;line-height:18px}
-        button,
-        input,optgroup,select,textarea{font-family: inherit}
+        button,input,optgroup,select,textarea{font-family: inherit}
       `,
     },
   ],
@@ -39,7 +38,7 @@ export const unocss: UnocssNuxtOptions = {
       md: "768px",
       lg: "992px",
       xl: "1200px",
-      "2xl": "1400px",
+      xxl: "1400px",
     },
     colors: {
       neutral: {
