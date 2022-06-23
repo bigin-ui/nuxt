@@ -1,5 +1,5 @@
 import { defineNuxtConfig } from "nuxt";
-import { unocss } from "./config/unocss";
+import { unocss } from "./config";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -8,8 +8,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      title: "Home",
+      titleTemplate: "%s - Nuxt App",
       meta: [
-        // <meta name="viewport" content="width=device-width, initial-scale=1">
         { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
       link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
