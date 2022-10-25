@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from "nuxt";
 import { unocss } from "./config";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -21,7 +20,7 @@ export default defineNuxtConfig({
   components: [
     "~/components",
     {
-      path: "node_modules/bigin-ui/es/components/",
+      path: "node_modules/bigin-ui/es/components",
       pattern: "**/index.mjs",
       prefix: "b",
     },

@@ -8,7 +8,7 @@ Make sure to install the dependencies:
 
 ```bash
 # pnpm
-pnpm i
+pnpm install --shamefully-hoist
 ```
 
 ## Development Server
@@ -16,7 +16,7 @@ pnpm i
 Start the development server on http://localhost:3000
 
 ```bash
-pnpm dev
+pnpm dev -o
 ```
 
 ## Production

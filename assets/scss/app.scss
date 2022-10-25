@@ -1,9 +1,15 @@
 @forward "bigin-ui/theme-chalk/src/common/var" with (
   $colors: (
     "primary": (
-      "base": #0086ff,
+      "base": #ff6800,
+      "1": #ffc9a3,
+      "2": #ff9852,
+      "3": #ff6800,
+      "4": #c24f00,
+      "5": #853600,
     ),
   )
 );
 
+@use "bigin-ui/theme-chalk/src/reset.scss" as *;
 @use "bigin-ui/theme-chalk/src/index.scss" as *;
