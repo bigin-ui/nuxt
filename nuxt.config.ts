@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     "~/components",
     {
       path: "node_modules/bigin-ui/es/components",
-      pattern: "**/index.mjs",
+      pattern: "*/index.mjs",
       prefix: "b",
     },
   ],
