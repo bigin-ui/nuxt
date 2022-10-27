@@ -15,15 +15,7 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
     },
   },
-  modules: ["@unocss/nuxt"],
+  modules: ["@unocss/nuxt", "bigin-ui/es/nuxt"],
   css: ["~/assets/scss/app.scss"],
-  components: [
-    "~/components",
-    {
-      path: "node_modules/bigin-ui/es/components",
-      pattern: "*/index.mjs",
-      prefix: "b",
-    },
-  ],
   unocss,
 });
