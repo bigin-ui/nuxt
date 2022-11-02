@@ -18,4 +18,7 @@ export default defineNuxtConfig({
   modules: ["@unocss/nuxt", "bigin-ui/es/nuxt"],
   css: ["~/assets/scss/app.scss"],
   unocss,
+  build: {
+    transpile: ["chart.js"],
+  },
 });

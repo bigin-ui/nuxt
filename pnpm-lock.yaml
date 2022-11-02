@@ -2,13 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   '@unocss/nuxt': ^0.46.0
-  bigin-ui: ^1.1.39
+  bigin-ui: ^1.1.41
   nuxt: 3.0.0-rc.12
   sass: ^1.55.0
   unocss: ^0.46.0
 
 dependencies:
-  bigin-ui: 1.1.39_yo4z7ac3ov4xuu3vw3jswpnxxi
+  bigin-ui: 1.1.41_yo4z7ac3ov4xuu3vw3jswpnxxi
 
 devDependencies:
   '@unocss/nuxt': 0.46.0_g5cselaiarnwx6jxpretiqna7e
@@ -1716,8 +1716,8 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
-  /bigin-ui/1.1.39_yo4z7ac3ov4xuu3vw3jswpnxxi:
-    resolution: {integrity: sha512-YzeCJlR+LpWn3uOkR8IntiKI05wotE/Ku+k0YkEG3ecShgG9mtUXbv5njExVWBkOleUDp1AgFGeoagDK1I/QJg==}
+  /bigin-ui/1.1.41_yo4z7ac3ov4xuu3vw3jswpnxxi:
+    resolution: {integrity: sha512-atfNT7cNigaXDem6YfrM4yaN0oHoElO/kPbBdAVOGs1ZxWWnXRTFCF/aALC9z3iDewdyCVCmse6TcrzcBWkzqw==}
     peerDependencies:
       vue: ^3.2.41
     dependencies:
@@ -1735,6 +1735,7 @@ packages:
       escape-html: 1.0.3
       libphonenumber-js: 1.10.14
       lodash-unified: 1.0.2_3ib2ivapxullxkx3xftsimdk7u
+      lottie-web-vue: 2.0.6
       memoize-one: 6.0.0
       normalize-wheel-es: 1.2.0
       vue: 3.2.41
@@ -3406,6 +3407,17 @@ packages:
       chalk: 5.1.2
       is-unicode-supported: 1.3.0
     dev: true
+
+  /lottie-web-vue/2.0.6:
+    resolution: {integrity: sha512-xtdzuYsLoyiTcGWprJXnVu+tRza5T0OJuPzI5o4x+A+QrlifBLaDzUBX4EPye+mGJ/Nzd83lWtOJpknuFHpPCw==}
+    dependencies:
+      lottie-web: 5.9.6
+      vue: 3.2.41
+    dev: false
+
+  /lottie-web/5.9.6:
+    resolution: {integrity: sha512-JFs7KsHwflugH5qIXBpB4905yC1Sub2MZWtl/elvO/QC6qj1ApqbUZJyjzJseJUtVpgiDaXQLjBlIJGS7UUUXA==}
+    dev: false
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
