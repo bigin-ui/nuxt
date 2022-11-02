@@ -2,13 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   '@unocss/nuxt': ^0.46.0
-  bigin-ui: ^1.1.41
+  bigin-ui: ^1.1.42
   nuxt: 3.0.0-rc.12
   sass: ^1.55.0
   unocss: ^0.46.0
 
 dependencies:
-  bigin-ui: 1.1.41_yo4z7ac3ov4xuu3vw3jswpnxxi
+  bigin-ui: 1.1.42_yo4z7ac3ov4xuu3vw3jswpnxxi
 
 devDependencies:
   '@unocss/nuxt': 0.46.0_g5cselaiarnwx6jxpretiqna7e
@@ -1716,8 +1716,8 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
-  /bigin-ui/1.1.41_yo4z7ac3ov4xuu3vw3jswpnxxi:
-    resolution: {integrity: sha512-atfNT7cNigaXDem6YfrM4yaN0oHoElO/kPbBdAVOGs1ZxWWnXRTFCF/aALC9z3iDewdyCVCmse6TcrzcBWkzqw==}
+  /bigin-ui/1.1.42_yo4z7ac3ov4xuu3vw3jswpnxxi:
+    resolution: {integrity: sha512-C5dJEPKMqieSRyD4cjU2WodBkIPqN0NAWsDukvEOI13Q4u8RGI7X+jl1DY8MhqGVGnZJX4c0vWU0ezXb0/zpOg==}
     peerDependencies:
       vue: ^3.2.41
     dependencies:

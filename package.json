@@ -13,6 +13,6 @@
     "unocss": "^0.46.0"
   },
   "dependencies": {
-    "bigin-ui": "^1.1.41"
+    "bigin-ui": "^1.1.42"
   }
 }
