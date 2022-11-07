@@ -19,6 +19,6 @@ export default defineNuxtConfig({
   css: ["~/assets/scss/app.scss"],
   unocss,
   build: {
-    transpile: ["chart.js"],
+    transpile: ["chart.js", "@popperjs/core"],
   },
 });
