@@ -7,7 +7,7 @@
       </div>
       <div class="ml-auto">
         <b-tooltip
-          :open-delay="150"
+          :show-after="150"
           :content="darkMode ? 'Switch to light mode' : 'Switch to dark mode'"
           placement="right"
         >
