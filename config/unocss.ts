@@ -114,6 +114,17 @@ export const unocss: UnocssNuxtOptions = {
       "2xl": "1.5rem",
       "3xl": "1.75rem",
     },
+    fontSize: {
+      xs: "10px",
+      sm: "12px",
+      base: "14px",
+      lg: "16px",
+      "2xl": "18px",
+      "3xl": "20px",
+      h4: "24px",
+      h3: "28px",
+      h2: "32px",
+    },
   },
   shortcuts: [
     [

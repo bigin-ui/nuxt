@@ -1,0 +1,14 @@
+@forward "bigin-ui/theme-chalk/src/dark/var" with (
+  $colors: (
+    "primary": (
+      "base": #ff6800,
+      "5": #ffc9a3,
+      "4": #ff9852,
+      "3": #ff6800,
+      "2": #c24f00,
+      "1": #853600,
+    ),
+  )
+);
+
+@use "bigin-ui/theme-chalk/src/dark/css-vars.scss" as *;

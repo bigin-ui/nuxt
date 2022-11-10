@@ -1,16 +1,20 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify-json/fluent': ^1.1.16
   '@unocss/nuxt': ^0.46.0
-  bigin-ui: ^1.1.43
+  '@vueuse/core': ^9.5.0
+  bigin-ui: ^1.1.49
   nuxt: 3.0.0-rc.13
   sass: ^1.55.0
   unocss: ^0.46.0
 
 dependencies:
-  bigin-ui: 1.1.43_yo4z7ac3ov4xuu3vw3jswpnxxi
+  '@vueuse/core': 9.5.0_vue@3.2.41
+  bigin-ui: 1.1.49_yo4z7ac3ov4xuu3vw3jswpnxxi
 
 devDependencies:
+  '@iconify-json/fluent': 1.1.16
   '@unocss/nuxt': 0.46.0_y6szcyeazdz44yftt26onwcdwa
   nuxt: 3.0.0-rc.13_rollup@2.79.1+sass@1.55.0
   sass: 1.55.0
@@ -320,6 +324,10 @@ packages:
       vue: 3.2.41
     dev: false
 
+  /@bigin/popperjs-es/2.12.0:
+    resolution: {integrity: sha512-deGyxpxn8Oa2ZBuniO/fDVJ3HZXNG3QJ0OZzqOA0zAhSdBtnqEi0T9COdIGY6efbKUBXGjgtV4TdpQ/Ub1lNZQ==}
+    dev: false
+
   /@cloudflare/kv-asset-handler/0.2.0:
     resolution: {integrity: sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==}
     dependencies:
@@ -358,6 +366,12 @@ packages:
     dependencies:
       '@floating-ui/core': 0.7.3
     dev: false
+
+  /@iconify-json/fluent/1.1.16:
+    resolution: {integrity: sha512-8pc7JBRh4nvtnx9IxNnW7IrkgVkFilShaspYs+iQekbRUMB/qsB9tcmKEHUnNiWgyoNSXRnKyQezdDfqn7jY4g==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
 
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -778,10 +792,6 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@sxzz/popperjs-es/2.11.7:
-    resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==}
-    dev: false
-
   /@tiptap/core/2.0.0-beta.199:
     resolution: {integrity: sha512-34GaXcBEmNFjW1R7nf1LSmOHo3Q81YjKqvLAXjDLLG7MTx+YTrQ4yWwUvMsZtmi4o/FchUzrs1NVCfr571Zxzg==}
     dependencies:
@@ -1062,6 +1072,10 @@ packages:
 
   /@types/web-bluetooth/0.0.14:
     resolution: {integrity: sha512-5d2RhCard1nQUC3aHcq/gHzWYO6K0WJmAbjO7mQJgCQKtZpgXxv1rOM6O/dBDhDYYVutk1sciOgNSe+5YyfM8A==}
+    dev: false
+
+  /@types/web-bluetooth/0.0.16:
+    resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
     dev: false
 
   /@unocss/astro/0.46.0_rollup@2.79.1+vite@3.2.3:
@@ -1426,6 +1440,18 @@ packages:
       vue-demi: 0.13.11_vue@3.2.41
     dev: false
 
+  /@vueuse/core/9.5.0_vue@3.2.41:
+    resolution: {integrity: sha512-6GsWBsJHEb3sYw15mbLrcbslAVY45pkzjJYTKYKCXv88z7srAF0VEW0q+oXKsl58tCbqooplInahXFg8Yo1m4w==}
+    dependencies:
+      '@types/web-bluetooth': 0.0.16
+      '@vueuse/metadata': 9.5.0
+      '@vueuse/shared': 9.5.0_vue@3.2.41
+      vue-demi: 0.13.11_vue@3.2.41
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
   /@vueuse/head/1.0.0-rc.14_vue@3.2.41:
     resolution: {integrity: sha512-3DtOfSE1141IKPIq4AR5UXQZPWQFSd7E5f3M+HkBRyxWsyxbNBBmK5hqkSYc2ENoFXa3xPhLYZXJPKuxqfJmiA==}
     peerDependencies:
@@ -1441,6 +1467,10 @@ packages:
 
   /@vueuse/metadata/8.9.4:
     resolution: {integrity: sha512-IwSfzH80bnJMzqhaapqJl9JRIiyQU0zsRGEgnxN6jhq7992cPUJIRfV+JHRIZXjYqbwt07E1gTEp0R0zPJ1aqw==}
+    dev: false
+
+  /@vueuse/metadata/9.5.0:
+    resolution: {integrity: sha512-4M1AyPZmIv41pym+K5+4wup3bKuYebbH8w8BROY1hmT7rIwcyS4tEL+UsGz0Hiu1FCOxcoBrwtAizc0YmBJjyQ==}
     dev: false
 
   /@vueuse/shared/8.9.4_vue@3.2.41:
@@ -1465,7 +1495,6 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
-    dev: true
 
   /@webassemblyjs/ast/1.11.1:
     resolution: {integrity: sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw==}
@@ -1766,16 +1795,16 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
-  /bigin-ui/1.1.43_yo4z7ac3ov4xuu3vw3jswpnxxi:
-    resolution: {integrity: sha512-0IkRrRAu2lr4xQSu+j/fmohM8ZQoQz6Fw2WqwWS9oSBL5y3OQNluT0UaT1b2wtAF2Iltc8CO+AgGnXPzqoMFTA==}
+  /bigin-ui/1.1.49_yo4z7ac3ov4xuu3vw3jswpnxxi:
+    resolution: {integrity: sha512-Z5L7u62SjEBiFl00jKuyXmZ0iJ3f2r+lmvkoyKXXesveD8xcaYMB+rXtvDrJmdkYtBj59o3XZk688RkE8nP6rA==}
     peerDependencies:
       vue: ^3.2.41
     dependencies:
       '@bigin/icons-vue': 2.4.0_vue@3.2.41
+      '@bigin/popperjs-es': 2.12.0
       '@ctrl/tinycolor': 3.4.1
       '@floating-ui/dom': 0.5.4
       '@nuxt/kit': 3.0.0-rc.12
-      '@popperjs/core': /@sxzz/popperjs-es/2.11.7
       '@tiptap/extension-text-align': 2.0.0-beta.199_4focsuckzeocqotdxlryrtksam
       '@tiptap/starter-kit': 2.0.0-beta.199
       '@tiptap/vue-3': 2.0.0-beta.199_5vywnszafehn6atjlp6g6o3jse
