@@ -4,13 +4,6 @@ import { transformerCompileClass } from "unocss";
 export const unocss: UnocssNuxtOptions = {
   preflight: false,
   icons: true,
-  preflights: [
-    {
-      getCSS: () => `
-        html{font-family:"Inter",sans-serif}
-      `,
-    },
-  ],
   webFonts: {
     fonts: {
       sans: [

@@ -1,4 +1,4 @@
-import { unocss } from "./config";
+import { i18n, unocss, pinia } from "./config";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -15,7 +15,9 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
     },
   },
-  modules: ["@unocss/nuxt", "bigin-ui/es/nuxt"],
+  modules: ["@unocss/nuxt", "bigin-ui/es/nuxt", "@pinia/nuxt", "@nuxtjs/i18n"],
   css: ["~/assets/scss/app.scss"],
   unocss,
+  i18n,
+  pinia,
 });
