@@ -7,7 +7,6 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@iconify-json/fluent": "^1.1.16",
     "@unocss/nuxt": "^0.46.0",
     "nuxt": "3",
     "sass": "^1.55.0",
@@ -15,6 +14,6 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.5.0",
-    "bigin-ui": "^1.1.53"
+    "bigin-ui": "^1.1.54"
   }
 }

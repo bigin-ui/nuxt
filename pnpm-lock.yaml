@@ -1,20 +1,18 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@iconify-json/fluent': ^1.1.16
   '@unocss/nuxt': ^0.46.0
   '@vueuse/core': ^9.5.0
-  bigin-ui: ^1.1.53
+  bigin-ui: ^1.1.54
   nuxt: '3'
   sass: ^1.55.0
   unocss: ^0.46.0
 
 dependencies:
   '@vueuse/core': 9.5.0_vue@3.2.45
-  bigin-ui: 1.1.53_vp7v4vhtnprexycfozbrzk5quq
+  bigin-ui: 1.1.54_vp7v4vhtnprexycfozbrzk5quq
 
 devDependencies:
-  '@iconify-json/fluent': 1.1.16
   '@unocss/nuxt': 0.46.0_cggtkagrlotyt7qszvjrmtblfy
   nuxt: 3.0.0_rollup@2.79.1+sass@1.55.0
   sass: 1.55.0
@@ -474,12 +472,6 @@ packages:
     dependencies:
       '@floating-ui/core': 0.7.3
     dev: false
-
-  /@iconify-json/fluent/1.1.16:
-    resolution: {integrity: sha512-8pc7JBRh4nvtnx9IxNnW7IrkgVkFilShaspYs+iQekbRUMB/qsB9tcmKEHUnNiWgyoNSXRnKyQezdDfqn7jY4g==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: true
 
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1879,8 +1871,8 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
-  /bigin-ui/1.1.53_vp7v4vhtnprexycfozbrzk5quq:
-    resolution: {integrity: sha512-A0Mq8UMxMIQnlKVrWN3XIY/BcqPMF+6liJjs4Do1UMBisql6LalAjbiJRCjku+pcdxl13bnPBLac0HG11lft4A==}
+  /bigin-ui/1.1.54_vp7v4vhtnprexycfozbrzk5quq:
+    resolution: {integrity: sha512-62g8elibZBLQkugp72hmhwUczbPayYyp0teqOo2D5FiyU7Mucl4exlGkbL86P94aWe+JHshropieoZbff7761A==}
     peerDependencies:
       vue: ^3.2.41
     dependencies:
