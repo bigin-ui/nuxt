@@ -5,6 +5,20 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+  runtimeConfig: {
+    apiUrl: process.env.NUXT_API_URL,
+    systemId: process.env.NUXT_API_SYSTEM_ID,
+    auth: {
+      clientId: "1STPARTY.APP",
+      clientSecret: "P@ss4FirstPartyApp",
+      grantType: {
+        password: "password",
+        refresh: "refresh_token",
+      },
+      scope:
+        "resourceApi offline_access profile fileServiceApi notificationApi",
+    },
+  },
   app: {
     head: {
       title: "Home",

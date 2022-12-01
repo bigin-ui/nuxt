@@ -39,8 +39,8 @@ const { t } = useI18n();
 const loadingState = useState(() => false);
 const errorState = useState(() => "");
 const userState = useState(() => ({
-  username: "johnd",
-  password: "m38rmF$",
+  username: "vy.trinh@bigin.vn",
+  password: "Vychuoi@123",
 }));
 const rules = {
   username: { required },
@@ -54,7 +54,7 @@ const handleLogin = async () => {
   errorState.value = "";
   if (!v$.value.$invalid) {
     loadingState.value = true;
-    const { data, error } = await useFetch("/api/auth/login", {
+    const { data, error } = await useFetch("/api/connect/token", {
       method: "post",
       body: {
         username: userState.value.username,
