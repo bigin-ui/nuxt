@@ -5,20 +5,17 @@
       <h1 class="text-3xl ml-2">Nuxt Starter</h1>
     </nuxt-link>
     <div class="flex-1"></div>
-    <b-dropdown
-      v-if="isAuthenticated && profileState?.id.length"
-      @command="handleCommand"
-    >
+    <b-dropdown v-if="isAuthenticated && profile" @command="handleCommand">
       <div
         class="inline-flex items-center p-1 hover:cursor-pointer hover:b-bg-neutral-2 aria-expanded:b-bg-neutral-2 rounded-max"
       >
         <b-avatar
-          :src="profileState.avatar"
-          :name="profileState.fullName"
+          :src="profile.avatar"
+          :name="profile.fullName"
           circle
           :size="24"
         />
-        <span class="font-semibold px-2">{{ profileState.fullName }}</span>
+        <span class="font-semibold px-2">{{ profile.fullName }}</span>
         <b-icon class="mr-1">
           <ActionDown />
         </b-icon>
@@ -43,11 +40,14 @@
 
 <script setup lang="ts">
 import { ActionDown, Profile, SignOut } from "@bigin/icons-vue";
+import { storeToRefs } from "pinia";
 import { API_URL, COOKIE_KEY } from "~~/enums";
 import { ProfileModel } from "~~/models";
+import { useProfileStore } from "~~/stores";
 
 const isAuthenticated = useCookie(COOKIE_KEY.access_token);
-const profileState = useProfileState();
+const profileStore = useProfileStore();
+const { profile } = storeToRefs(profileStore);
 
 const handleCommand = (command: string) => {
   switch (command) {
@@ -65,13 +65,10 @@ const handleCommand = (command: string) => {
 };
 
 watchEffect(async () => {
-  if (
-    !!isAuthenticated.value &&
-    (profileState.value === null || profileState.value?.id === "")
-  ) {
+  if (!!isAuthenticated.value && !profile.value) {
     const { data } = await useApiFetch<ProfileModel>(API_URL.profile);
 
-    profileState.value = data.value!;
+    profileStore.setProfile(data.value);
   }
 });
 </script>
