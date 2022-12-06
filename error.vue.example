@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { NuxtError } from "#app";
+import { COOKIE_KEY } from "~~/enums";
 
 const props = defineProps<{ error: NuxtError }>();
 
 if (props.error.statusCode.toString() === "401") {
-  const token = useCookie("access_token");
+  const token = useCookie(COOKIE_KEY.access_token);
 
   token.value = "";
   clearError({ redirect: "/auth/login" });

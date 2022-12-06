@@ -7,7 +7,9 @@
 </template>
 
 <script setup lang="ts">
-const { data, error, refresh } = await useApiLazyFetch("/api/hello");
+import { API_URL } from "~~/enums";
+
+const { data, error, refresh } = await useApiLazyFetch(API_URL.hello);
 
 if (error.value) {
   throw createError({

@@ -1,11 +1,11 @@
 import { NuxtError } from "#app";
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.config.errorHandler = (error, _) => {
+  nuxtApp.vueApp.config.errorHandler = (error, context) => {
     const { statusCode } = error as NuxtError;
 
-    if (["401", "403"].includes(statusCode.toString())) {
-      navigateTo("/auth/logout");
+    if ([401, 403].includes(statusCode)) {
+      context?.$router.push("/auth/logout");
     }
   };
 });

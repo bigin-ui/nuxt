@@ -8,8 +8,9 @@
 
 <script setup lang="ts">
 import { useDark } from "@vueuse/core";
+import { COOKIE_KEY } from "~~/enums";
 
-const isAuthenticated = useCookie("access_token");
+const isAuthenticated = useCookie(COOKIE_KEY.access_token);
 
 useDark();
 

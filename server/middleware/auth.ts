@@ -1,5 +1,6 @@
+import { H3Error } from "h3";
 import { jwt_decode } from "jwt-decode-es";
-import { FetchError } from "ohmyfetch";
+import { API_URL } from "~~/enums";
 
 export default defineEventHandler(async (event) => {
   const token = getCookie(event, "access_token");
@@ -17,7 +18,7 @@ export default defineEventHandler(async (event) => {
       if (needRefreshToken) {
         try {
           const { access_token, refresh_token } = await $fetch(
-            "/api/connect/refresh",
+            API_URL.refreshToken,
             {
               method: "post",
               body: {
@@ -30,18 +31,17 @@ export default defineEventHandler(async (event) => {
           setCookie(event, "access_token", access_token);
           setCookie(event, "refresh_token", refresh_token);
         } catch (error) {
-          sendError(event, error as FetchError);
+          throw error;
         }
       } else {
         event.node.req.headers.authorization = `Bearer ${token}`;
       }
     } else {
-      sendError(event, {
-        statusCode: 401,
-        statusMessage: "Unauthorized access",
-        name: "access_token",
-        message: "Invalid access token",
-      });
+      const error = new H3Error();
+      error.statusCode = 401;
+      error.statusMessage = "Unauthorized Access";
+
+      throw error;
     }
   }
 });

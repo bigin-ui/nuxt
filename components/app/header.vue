@@ -5,7 +5,10 @@
       <h1 class="text-3xl ml-2">Nuxt Starter</h1>
     </nuxt-link>
     <div class="flex-1"></div>
-    <b-dropdown v-if="isAuthenticated" @command="handleCommand">
+    <b-dropdown
+      v-if="isAuthenticated && profileState?.id.length"
+      @command="handleCommand"
+    >
       <div
         class="inline-flex items-center p-1 hover:cursor-pointer hover:b-bg-neutral-2 aria-expanded:b-bg-neutral-2 rounded-max"
       >
@@ -40,18 +43,11 @@
 
 <script setup lang="ts">
 import { ActionDown, Profile, SignOut } from "@bigin/icons-vue";
+import { API_URL, COOKIE_KEY } from "~~/enums";
 import { ProfileModel } from "~~/models";
 
-const isAuthenticated = useCookie("access_token");
+const isAuthenticated = useCookie(COOKIE_KEY.access_token);
 const profileState = useProfileState();
-
-if (isAuthenticated && profileState.value.id === "") {
-  const { data } = await useApiFetch<ProfileModel>(
-    "/api/identity/account/profile"
-  );
-
-  profileState.value = data.value!;
-}
 
 const handleCommand = (command: string) => {
   switch (command) {
@@ -67,4 +63,15 @@ const handleCommand = (command: string) => {
       break;
   }
 };
+
+watchEffect(async () => {
+  if (
+    !!isAuthenticated.value &&
+    (profileState.value === null || profileState.value?.id === "")
+  ) {
+    const { data } = await useApiFetch<ProfileModel>(API_URL.profile);
+
+    profileState.value = data.value!;
+  }
+});
 </script>

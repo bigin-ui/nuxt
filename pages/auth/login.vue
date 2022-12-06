@@ -32,6 +32,7 @@
 import { ArrowRight } from "@bigin/icons-vue";
 import { useVuelidate } from "@vuelidate/core";
 import { required } from "@vuelidate/validators";
+import { API_URL } from "~~/enums";
 
 definePageMeta({ layout: "blank" });
 
@@ -55,7 +56,7 @@ const handleLogin = async () => {
 
   if (!v$.value.$invalid) {
     loadingState.value = true;
-    const { data, error } = await useFetch("/api/connect/token", {
+    const { data, error } = await useFetch(API_URL.token, {
       method: "post",
       body: {
         username: userState.value.username,
