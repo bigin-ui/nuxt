@@ -124,7 +124,7 @@ const getI18nMessage = (
 };
 
 export function useValidationMessage(
-  v: Ref<Validation>,
+  v: Ref<Validation<any, any>>,
   t: ComposerTranslation | undefined = undefined
 ) {
   const value = unref(v);
