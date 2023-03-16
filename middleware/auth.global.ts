@@ -1,10 +1,21 @@
-import { COOKIE_KEY } from "~~/enums";
+import { storeToRefs } from "pinia";
+import { useAuthStore } from "~~/stores";
 
-export default defineNuxtRouteMiddleware((to, from) => {
+export default defineNuxtRouteMiddleware(async (to, from) => {
   const isRequireAuth = to.meta.auth === true;
-  const token = useCookie(COOKIE_KEY.access_token);
+  const hasToken = useAccessToken();
+  const { $pinia } = useNuxtApp();
+  const authStore = useAuthStore($pinia);
+  const { user } = storeToRefs(authStore);
 
-  if (isRequireAuth && !token.value) {
-    return navigateTo("/auth/login");
+  console.log("[AuthMiddleware]", user.value);
+  if (isRequireAuth) {
+    if (!!hasToken.value) {
+      if (!user.value) {
+        await authStore.fetchUser();
+      }
+    } else {
+      return navigateTo("/auth/login");
+    }
   }
 });

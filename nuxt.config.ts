@@ -1,24 +1,12 @@
-import { i18n, unocss, pinia } from "./config";
+import { i18n, unocss, pinia, runtimeConfig } from "./config";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-  runtimeConfig: {
-    apiUrl: process.env.NUXT_API_URL,
-    systemId: process.env.NUXT_API_SYSTEM_ID,
-    auth: {
-      clientId: "1STPARTY.APP",
-      clientSecret: "P@ss4FirstPartyApp",
-      grantType: {
-        password: "password",
-        refresh: "refresh_token",
-      },
-      scope:
-        "resourceApi offline_access profile fileServiceApi notificationApi",
-    },
-  },
+  ssr: true,
+  runtimeConfig,
   app: {
     head: {
       title: "Home",

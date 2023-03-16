@@ -1,20 +1,28 @@
 <template>
-  <b-card v-loading="loadingState" class="w-400px">
+  <b-card v-loading="state.loading" class="w-400px">
     <div class="flex flex-col items-center justify-center">
       <img src="/favicon.png" alt="Branding" class="w-20 h-20 my-8" />
       <h3>Welcome to Nuxt Starter!</h3>
     </div>
-    <b-alert v-if="errorState" :title="errorState" type="error" class="mt-4" />
+    <b-alert
+      v-if="state.error"
+      :title="state.error"
+      type="error"
+      class="mt-4"
+    />
     <b-form @submit.prevent="handleLogin">
-      <b-form-item label="Username" :error="validationMessage('username')">
-        <b-input
-          v-model="userState.username"
-          placeholder="Enter your username"
-        />
+      <b-form-item
+        :label="t('vuelidate.fields.email')"
+        :error="validationMessage('email')"
+      >
+        <b-input v-model="state.email" placeholder="Enter your email" />
       </b-form-item>
-      <b-form-item label="Password" :error="validationMessage('password')">
+      <b-form-item
+        :label="t('vuelidate.fields.password')"
+        :error="validationMessage('password')"
+      >
         <b-input
-          v-model="userState.password"
+          v-model="state.password"
           show-password
           placeholder="Enter your password"
         />
@@ -31,49 +39,53 @@
 <script setup lang="ts">
 import { ArrowRight } from "@bigin/icons-vue";
 import { useVuelidate } from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
-import { API_URL } from "~~/enums";
+import { email, required } from "@vuelidate/validators";
+import { useIdentityService } from "~~/composables/services";
+import { useAuthStore } from "~~/stores";
 
 definePageMeta({ layout: "blank" });
+useHead({ title: "Login" });
+
+const identityService = useIdentityService();
+const authStore = useAuthStore();
 
 const { t } = useI18n();
-const loadingState = useState(() => false);
-const errorState = useState(() => "");
-const userState = useState(() => ({
-  username: "",
+const state = reactive({
+  loading: false,
+  error: "",
+  email: "",
   password: "",
-}));
+});
 const rules = {
-  username: { required },
+  email: { required, email },
   password: { required },
 };
-const v$ = useVuelidate(rules, userState);
+const v$ = useVuelidate(rules, state, { $scope: false });
 const { validationMessage } = useValidationMessage(v$, t);
 
 const handleLogin = async () => {
   v$.value.$touch();
-  errorState.value = "";
+  state.error = "";
 
   if (!v$.value.$invalid) {
-    loadingState.value = true;
-    const { data, error } = await useFetch(API_URL.token, {
-      method: "post",
-      body: {
-        username: userState.value.username,
-        password: userState.value.password,
-      },
-    });
+    try {
+      state.loading = true;
+      const loggedIn = await identityService.connect({
+        username: state.email,
+        password: state.password,
+      });
 
-    if (error.value) {
-      errorState.value =
+      if (loggedIn) {
+        await authStore.fetchUser();
+
+        navigateTo("/");
+      }
+    } catch (error) {
+      state.error =
         "Authenticating is unsuccessful. Please check your username or password.";
+    } finally {
+      state.loading = true;
     }
-
-    if (data.value) {
-      navigateTo("/");
-    }
-
-    loadingState.value = false;
   }
 };
 </script>

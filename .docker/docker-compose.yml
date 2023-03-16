@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  nuxt-starter:
+    build:
+      context: ..
+      args:
+        NUXT_PUBLIC_API_URL: https://api.virgil-qa.k8s.bigin.top
+        NUXT_PUBLIC_API_SYSTEM_ID: 4
+    image: nuxt-starter-app:prod
+    container_name: nuxt-starter-app
+    # restart: always
+
+    ports:
+      - "3000:3000"

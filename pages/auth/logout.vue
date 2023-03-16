@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { COOKIE_KEY } from "~~/enums";
-
-const { auth } = useRuntimeConfig();
-const token = useCookie(COOKIE_KEY.access_token);
-const refreshToken = useCookie(COOKIE_KEY.refresh_token);
+const accessToken = useAccessToken();
+const refreshToken = useRefreshToken();
+const accessTokenCookie = useCookie("access_token");
+const refreshTokenCookie = useCookie("refresh_token");
 
 // Clear tokens
-token.value = "";
+accessToken.value = "";
 refreshToken.value = "";
+accessTokenCookie.value = "";
+refreshTokenCookie.value = "";
 
 // Go to login page
 navigateTo("/auth/login");

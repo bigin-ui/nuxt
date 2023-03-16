@@ -7,23 +7,18 @@
   </div>
   <b-card class="mt-6" body-class="p-0">
     <b-skeleton v-if="pending" animated class="p-6" />
-    <b-table v-else-if="data" :data="data.entities">
+    <b-table v-else-if="data" :data="data">
       <b-table-column
         type="index"
         :index="(index: number) => index + 1"
         label="#"
       />
-      <b-table-column prop="email" label="Email" />
-      <b-table-column prop="fullName" label="Name" />
-      <b-table-column prop="phoneNumber" label="Phone Number">
+      <b-table-column prop="name" label="Name" />
+      <b-table-column prop="epic" label="Epic" />
+      <b-table-column prop="userStore" label="User Story" />
+      <b-table-column label="Employee Name">
         <template #default="{ row }">
-          {{ row.phoneNumber ? row.phoneNumber : "—" }}
-        </template>
-      </b-table-column>
-      <b-table-column align="center" label="Status" width="120">
-        <template #default="{ row }">
-          <b-tag v-if="row.isActive" type="teal">Active</b-tag>
-          <b-tag v-else type="yellow">Inactive</b-tag>
+          {{ row.employee_name.value }}
         </template>
       </b-table-column>
       <template #empty>
@@ -35,21 +30,13 @@
 
 <script setup lang="ts">
 import { Refresh } from "@bigin/icons-vue";
-import { API_URL } from "~~/enums";
-import { EntityList, UserModel } from "~~/models";
+import { useDemoService } from "~~/composables/services";
+import { DemoModel } from "~~/models";
 
-useHead({ title: "Users" });
+useHead({ title: "Demo" });
+const demoService = useDemoService();
 
-const { data, refresh, error, pending } = await useApiLazyFetch<
-  EntityList<UserModel>
->(API_URL.demo);
-
-if (error.value) {
-  const { statusCode, statusMessage } = error.value;
-
-  throw createError({
-    statusCode,
-    statusMessage,
-  });
-}
+const { data, refresh, pending } = await useAsyncData<DemoModel[]>(
+  async () => (await demoService.getDemoData()) as DemoModel[]
+);
 </script>
