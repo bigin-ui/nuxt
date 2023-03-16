@@ -8,7 +8,6 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   const authStore = useAuthStore($pinia);
   const { user } = storeToRefs(authStore);
 
-  console.log("[AuthMiddleware]", user.value);
   if (isRequireAuth) {
     if (!!hasToken.value) {
       if (!user.value) {
