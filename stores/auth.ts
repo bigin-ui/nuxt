@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { useIdentityService } from "~~/composables/services";
 import { ProfileModel } from "~~/models";
 export const useAuthStore = defineStore("auth", {
   state: () => ({

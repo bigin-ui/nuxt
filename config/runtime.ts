@@ -1,9 +1,7 @@
 export const runtimeConfig = {
   public: {
-    isDev: process.env.NODE_ENV !== "production",
     auth: {
       clientId: "1STPARTY.APP",
-      clientSecret: "P@ss4FirstPartyApp",
       grantType: {
         password: "password",
         refresh: "refresh_token",

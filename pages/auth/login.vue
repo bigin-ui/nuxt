@@ -40,7 +40,6 @@
 import { ArrowRight } from "@bigin/icons-vue";
 import { useVuelidate } from "@vuelidate/core";
 import { email, required } from "@vuelidate/validators";
-import { useIdentityService } from "~~/composables/services";
 import { useAuthStore } from "~~/stores";
 
 definePageMeta({ layout: "blank" });

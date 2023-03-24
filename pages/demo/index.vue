@@ -30,7 +30,6 @@
 
 <script setup lang="ts">
 import { Refresh } from "@bigin/icons-vue";
-import { useDemoService } from "~~/composables/services";
 import { DemoModel } from "~~/models";
 
 useHead({ title: "Demo" });
