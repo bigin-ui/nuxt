@@ -6,6 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
+  "main": "nuxt.config.ts",
   "devDependencies": {
     "@unocss/nuxt": "^0.50.4",
     "nuxt": "^3.3.1",

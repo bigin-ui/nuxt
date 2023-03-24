@@ -1,5 +1,5 @@
 import { omitBy } from "lodash-unified";
-import { QueryObject, withQuery } from "ufo";
+import { joinURL, QueryObject, withQuery } from "ufo";
 
 export const wQuery = (url: string, query: QueryObject) =>
   withQuery(
@@ -23,4 +23,11 @@ export const downloadFile = async (
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+};
+
+export const formatURL = (base: string, endpoint: string) => {
+  const _base = base.endsWith("/") ? base.replace(/.$/, "") : base;
+  const _endpoint = !endpoint.startsWith("/") ? `/${endpoint}` : endpoint;
+
+  return joinURL(_base, _endpoint);
 };

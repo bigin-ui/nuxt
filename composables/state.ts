@@ -1,7 +1,4 @@
 import { useLocalStorage } from "@vueuse/core";
-import { ProfileModel } from "~~/models";
-
-export const useProfileState = () => useState<ProfileModel>("profile");
 
 export const useAccessToken = () =>
   process.server

@@ -1,7 +1,7 @@
 import { jwt_decode } from "jwt-decode-es";
 import { NitroFetchOptions, NitroFetchRequest } from "nitropack";
-import { joinURL } from "ufo";
 import { TokenModel } from "~~/models";
+import { formatURL } from "~~/utils";
 
 export async function useApiFetch<T = unknown>(
   endpoint: string,
@@ -23,7 +23,7 @@ export async function useApiFetch<T = unknown>(
 
   const renewToken = async () => {
     try {
-      const url = joinURL(publicConfig.api.url, "/connect/token");
+      const url = formatURL(publicConfig.api.url, "/connect/token");
       const { access_token, refresh_token } = await $fetch<TokenModel>(url, {
         method: "POST",
         headers: { "System-Id": publicConfig.api.systemId },
@@ -50,7 +50,7 @@ export async function useApiFetch<T = unknown>(
     const headers: Record<string, any> = {
       Authorization: `Bearer ${accessToken.value}`,
     };
-    const url = joinURL(publicConfig.api.url, endpoint);
+    const url = formatURL(publicConfig.api.url, endpoint);
     return $fetch<T>(url, { headers, ...opts });
   } else {
     console.log("[ApiFetch] No access token");
@@ -62,7 +62,7 @@ export function usePublicApiFetch<T = unknown>(
   opts?: NitroFetchOptions<NitroFetchRequest>
 ) {
   const { public: publicConfig } = useRuntimeConfig();
-  const url = joinURL(publicConfig.api.url, endpoint);
+  const url = formatURL(publicConfig.api.url, endpoint);
 
   return $fetch<T>(url, opts);
 }
