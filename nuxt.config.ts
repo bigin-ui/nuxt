@@ -22,4 +22,10 @@ export default defineNuxtConfig({
   unocss,
   i18n,
   pinia,
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) =>
+        ["lottie-player", "swiper-container", "swiper-slide"].includes(tag),
+    },
+  },
 });
