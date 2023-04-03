@@ -8,6 +8,10 @@ export default defineNuxtPlugin(({ vueApp }) => {
     current: 0,
   });
 
+  // Exclude web components
+  vueApp.config.compilerOptions.isCustomElement = (tag) =>
+    ["lottie-player", "swiper-container", "swiper-slide"].includes(tag);
+
   // Register directives and global plugins
   plugins.forEach((plugin) => vueApp.use(plugin));
 });
