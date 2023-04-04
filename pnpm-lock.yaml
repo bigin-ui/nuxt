@@ -17,11 +17,17 @@ dependencies:
     specifier: ^9.13.0
     version: 9.13.0(vue@3.2.47)
   bigin-ui:
-    specifier: ^1.1.83
-    version: 1.1.83(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)(vue@3.2.47)
+    specifier: ^1.1.92
+    version: 1.1.92(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)(vue@3.2.47)
   jwt-decode-es:
     specifier: ^3.0.9
     version: 3.0.9
+  lodash-es:
+    specifier: ^4.17.21
+    version: 4.17.21
+  lodash-unified:
+    specifier: ^1.0.3
+    version: 1.0.3(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)
   pinia:
     specifier: ^2.0.33
     version: 2.0.33(vue@3.2.47)
@@ -2741,7 +2747,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       glob: 7.2.3
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       lazystream: 1.0.1
       lodash.defaults: 4.2.0
       lodash.difference: 4.5.0
@@ -2814,8 +2820,8 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
-  /bigin-ui@1.1.83(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)(vue@3.2.47):
-    resolution: {integrity: sha512-KvDcotJdNQWtUUKpeG8kDiifTbQU0DbJME5Yf4ClfZn5iiK1As8e5KAAG2KSOrBYxllh9HoIK4tsCKX7aLmGrw==}
+  /bigin-ui@1.1.92(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)(vue@3.2.47):
+    resolution: {integrity: sha512-QCp2GkIkmIkLyV0iFUZuddOtgbeiqj2Nv6rwNvg2jZFWMJKrhjOG7USNqzO3XrhDGgPMHzYX8hmZTRK+lg9vLQ==}
     peerDependencies:
       vue: ^3.2.41
     dependencies:
@@ -2831,7 +2837,6 @@ packages:
       dayjs: 2.0.0-alpha.4
       libphonenumber-js: 1.10.24
       lodash-unified: 1.0.3(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)
-      lottie-web-vue: 2.0.6
       memoize-one: 6.0.0
       normalize-wheel-es: 1.2.0
       vue: 3.2.47
@@ -3509,7 +3514,7 @@ packages:
     resolution: {integrity: sha512-QHTXI/sZQmko1cbDoNAa3mJ5qhWUUNAq3vR0/YiD379fWQrcfuoX1+HW2S0MTt7XmoPLapdaDKUtelUSPic7hQ==}
     engines: {node: '>=10.13.0'}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       tapable: 2.2.1
     dev: true
 
@@ -4607,13 +4612,6 @@ packages:
       chalk: 5.2.0
       is-unicode-supported: 1.3.0
     dev: true
-
-  /lottie-web-vue@2.0.6:
-    resolution: {integrity: sha512-xtdzuYsLoyiTcGWprJXnVu+tRza5T0OJuPzI5o4x+A+QrlifBLaDzUBX4EPye+mGJ/Nzd83lWtOJpknuFHpPCw==}
-    dependencies:
-      lottie-web: 5.10.2
-      vue: 3.2.47
-    dev: false
 
   /lottie-web@5.10.2:
     resolution: {integrity: sha512-d0PFIGiwuMsJYaF4uPo+qG8dEorlI+xFI2zrrFtE1bGO4WoLIz+NjremxEq1swpR7juR10aeOtmNh3d6G3ub0A==}
