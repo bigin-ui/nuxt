@@ -5,8 +5,8 @@ dependencies:
     specifier: ^10.0.2
     version: 10.0.2(vue@3.2.47)
   bigin-ui:
-    specifier: ^1.1.70
-    version: 1.1.92(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)(vue@3.2.47)
+    specifier: ^1.1.94
+    version: 1.1.94(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)(vue@3.2.47)
 
 devDependencies:
   '@unocss/nuxt':
@@ -1825,8 +1825,8 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
-  /bigin-ui@1.1.92(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)(vue@3.2.47):
-    resolution: {integrity: sha512-QCp2GkIkmIkLyV0iFUZuddOtgbeiqj2Nv6rwNvg2jZFWMJKrhjOG7USNqzO3XrhDGgPMHzYX8hmZTRK+lg9vLQ==}
+  /bigin-ui@1.1.94(@types/lodash-es@4.17.7)(lodash-es@4.17.21)(lodash@4.17.21)(vue@3.2.47):
+    resolution: {integrity: sha512-Zdib/ygbJmZhXtX63WsmXeWBJ0fDwNo3Nd+ujLUgzIZ93YkTU2bb6EidfU8iAgRyt8NRFjGGZtuN9IjHiyEgxQ==}
     peerDependencies:
       vue: ^3.2.41
     dependencies:
