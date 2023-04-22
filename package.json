@@ -7,13 +7,14 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@unocss/nuxt": "^0.50.1",
-    "nuxt": "^3.2.2",
+    "@unocss/nuxt": "^0.51.5",
+    "consola": "^3.1.0",
+    "nuxt": "^3.4.2",
     "sass": "^1.58.3",
-    "unocss": "^0.50.1"
+    "unocss": "^0.51.5"
   },
   "dependencies": {
-    "@vueuse/core": "^9.13.0",
+    "@vueuse/core": "^10.0.2",
     "bigin-ui": "^1.1.70"
   }
 }
